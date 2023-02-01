@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang='en'>
+    <head>
+        <meta charset='utf-8'>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{{.Name}}</title>
+        <link href="../static/img/favicon.ico" rel="icon" type="image/x-icon">
+        <link href="../static/css/main.css" rel="stylesheet" type="text/css">
+    </head>
+
+    <body>
+        <h1><div class="words word-1">
+            <span>G</span>
+            <span>R</span>
+            <span>O</span>
+            <span>U</span>
+            <span>P</span>
+            <span>I</span>
+            <span>E</span>
+            <br>
+            <span>T</span>
+            <span>R</span>
+            <span>A</span>
+            <span>C</span>
+            <span>K</span>
+            <span>E</span>
+            <span>R</span>
+          </div></h1>
+     
+        <div class="artist">
+            <div class="imageartist">
+                <img src={{.Image}} alt="{{.Name}}">
+            </div>
+            <div class ="artistdata">
+                <h2>{{.Name}}</h2>
+                <br>
+                <div class="names">Members:</div><div class="data">{{range .Members}}{{.}} &nbsp;&nbsp;{{end}}</div>
+                <br>
+                <div class="names">Creation Date:</div><div class="data">{{.CreationDate}}</div> 
+                <br>
+                <div class="names">First Album:</div><div class="data">{{.FirstAlbum}}</div>
+                <br>
+                <div class="names">Concerts:</div><div class="data">
+                    {{range $key,$data:= .RelationsData.DatesLocations}}
+                    {{$key}}:
+                    {{range .}}{{.}} {{end}}<br>
+                    {{end}}
+                </div>
+                <br>
+               <a class="back" href="/">Main Page</a>
+            </div>
+        </div>
+        <div class="Arigato" title="Arigato : )">ありがとう</div>
+
+    </body>
+</html>
+
